@@ -61,7 +61,7 @@ class KeywordExtractor(object):
                 return []
 
             text = text.replace('\n\t',' ')
-            dc = DataCore(text=text, stopword_set=self.stopword_set, windowsSize=self.windowsSize, n=self.n)
+            dc = DataCore(text=text, stopword_set=self.stopword_set, windowsSize=self.windowsSize, n=self.n, tagsToDiscard=set([]))
             dc.build_single_terms_features(features=self.features)
             dc.build_mult_terms_features(features=self.features)
             resultSet = []
